@@ -1,12 +1,5 @@
 pipeline {
-    agent {
-    node {label 'labelName'}
-    docker {
-        image 'maven:3-alpine'
-        label 'my-defined-label'
-        args  '-v /tmp:/tmp'
-    }
-}
+    agent { docker { image 'python:alpine' } }
     stages {
         stage('run') {
             steps {
